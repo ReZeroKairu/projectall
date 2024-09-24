@@ -12,8 +12,8 @@ const SignIn = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  
-    const togglePasswordVisibility = () => {
+
+  const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
   const handleGoogleSignIn = async () => {
@@ -36,11 +36,9 @@ const SignIn = () => {
     }
   };
 
-  
-    if (user != null) {
-      navigate("/account");
-    }
- 
+  if (user != null) {
+    navigate("/account");
+  }
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -82,7 +80,7 @@ const SignIn = () => {
             />
             <button
               type="button"
-              className="absolute right-0 pr-3"
+              className="hidden"
               onClick={togglePasswordVisibility}
             >
               {showPassword ? "Hide" : "Show"}
@@ -97,7 +95,6 @@ const SignIn = () => {
               Sign in
             </button>
           </div>
-
           <div className="mt-3 text-center">
             <p>or</p>
           </div>
@@ -106,18 +103,23 @@ const SignIn = () => {
             <div className="max-w-[240px] m-auto py-4">
               <GoogleButton onClick={handleGoogleSignIn} />
             </div>
-          <div> 
-            <p>Don't have an account yet?</p>
-            
-            <p className="ml-6">Click here to <Link to='/signUp' className="text-blue-500 underline">
-                                Sign Up
-                            </Link></p>
-          </div>
+            <div>
+              <p>Don't have an account yet?</p>
+
+              <p className="ml-6s">
+                Click here to{" "}
+                <Link to="/signUp" className="text-blue-500 underline">
+                  Sign Up
+                </Link>
+              </p>
+            </div>
           </div>
         </form>
       </div>
       <footer className="flex flex-col items-center bg-red-800 h-20 w-full justify-center absolute bottom-0">
-        <p className="text-white">© 2024 Liceo De Cagayan University. All rights reserved.</p>
+        <p className="text-white">
+          © 2024 Liceo De Cagayan University. All rights reserved.
+        </p>
       </footer>
     </div>
   );

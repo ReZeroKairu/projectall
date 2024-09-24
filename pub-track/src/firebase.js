@@ -1,4 +1,3 @@
-
 import { initializeApp } from "firebase/app";
 import {
   GoogleAuthProvider,
@@ -7,9 +6,8 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   sendPasswordResetEmail,
-  signOut
+  signOut,
 } from "firebase/auth";
-
 
 import {
   getFirestore,
@@ -20,8 +18,6 @@ import {
   addDoc,
 } from "firebase/firestore";
 
-
-
 const firebaseConfig = {
   apiKey: "AIzaSyCrQWpBqqj15rAbmRadySLOHH1m0S5iq78",
   authDomain: "pubtrack-d9e6d.firebaseapp.com",
@@ -29,7 +25,7 @@ const firebaseConfig = {
   storageBucket: "pubtrack-d9e6d.appspot.com",
   messagingSenderId: "695732528320",
   appId: "1:695732528320:web:0e75ea87bfa08da665b925",
-  measurementId: "G-QTWCET13BJ"
+  measurementId: "G-QTWCET13BJ",
 };
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -48,7 +44,7 @@ const signInWithGoogle = async () => {
         authProvider: "google",
         email: user.email,
       });
-    } 
+    }
   } catch (err) {
     console.error(err);
     alert(err.message);
